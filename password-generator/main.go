@@ -11,7 +11,7 @@ func main() {
 	// 命令行参数
 	length := flag.Int("length", 12, "密码长度")
 	name := flag.String("name", "default", "密码名称")
-	filename := flag.String("file", "passwords.yaml", "保存密码的YAML文件")
+	filename := flag.String("file", "./password-generator/passwords.yaml", "保存密码的YAML文件")
 	mode := flag.String("mode", "alphanumeric", "密码模式: alphanumeric, mixedcase, allchars")
 	flag.Parse()
 
