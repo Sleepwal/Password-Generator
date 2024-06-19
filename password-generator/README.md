@@ -8,4 +8,6 @@
 go run main.go -length=16 -name=my_password -mode=alphanumeric
 go run main.go -length=16 -name=my_password -mode=mixedcase
 go run main.go -length=16 -name=my_password -mode=allchars
+
+go run main.go -length=16 -name=my_password -mode=allchars -name=wenlian
 ```

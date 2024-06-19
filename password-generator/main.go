@@ -3,6 +3,7 @@ package main
 import (
 	"SleepWalker/PasswordGenerator/core"
 	"flag"
+	"log"
 
 	"github.com/spf13/viper"
 )
@@ -11,7 +12,8 @@ func main() {
 	// 命令行参数
 	length := flag.Int("length", 12, "密码长度")
 	name := flag.String("name", "default", "密码名称")
-	filename := flag.String("file", "./password-generator/passwords.yaml", "保存密码的YAML文件")
+	//filename := flag.String("file", "./password-generator/passwords.yaml", "保存密码的YAML文件")
+	filename := flag.String("file", "./passwords.yaml", "保存密码的YAML文件")
 	mode := flag.String("mode", "alphanumeric", "密码模式: alphanumeric, mixedcase, allchars")
 	flag.Parse()
 
@@ -43,7 +45,7 @@ func main() {
 	// 保存新密码
 	cfg.Passwords[*name] = password
 	if err := cfg.Save(); err != nil {
-		panic(err)
+		log.Fatalln("保存密码失败, ", err)
 	}
 
 	// 打印保存成功信息
